@@ -27,7 +27,35 @@ class CalculadoraTest {
 
     @Test
     void areaEsfera(){
-        assertEquals(1017.87, Main.areaEsfera(9));
+        assertEquals(1017.88, Main.areaEsfera(9));
+        assertEquals(63347.07, Main.areaEsfera(71));
+        assertEquals(38013.27, Main.areaEsfera(55));
     }
 
+    @Test
+    void areaCubo(){
+        assertEquals(39366, Main.areaCubo(81));
+        assertEquals(63654, Main.areaCubo(103));
+        assertEquals(2973696, Main.areaCubo(704));
+    }
+
+    @Test
+    void volumenCubo(){
+        assertEquals(531441, Main.volumenCubo(81));
+        assertEquals(1092727, Main.volumenCubo(103));
+        assertEquals(348913664, Main.volumenCubo(704));
+    }
+
+    @Test
+    void areaCono(){
+        assertEquals(179.12, Main.areaCono(4,5));
+        assertEquals(45781.38, Main.areaCono(41,83));
+        assertEquals(3772.24, Main.areaCono(18,23));
+    }
+
+    @Test
+    void interseccio(){
+        assertEquals("X = 3.0, Y = 5.0", Main.interseccionRectas(3,2,19,1,1,8));
+        assertEquals("X = Infinity, Y = -Infinity", Main.interseccionRectas(1,1,19,1,1,8));
+    }
 }

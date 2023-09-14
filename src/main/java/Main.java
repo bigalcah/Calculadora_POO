@@ -29,47 +29,53 @@ public class Main {
         return Math.pow(numero1, Potencia);
     }
 
-    public static double redondear(double num){//arreglando
+    public static double porcentaje(double numero1, double porcentaje) {
+        return (numero1 * porcentaje) / 100;
+    }
+
+    public static double redondear(double num) {
         DecimalFormat df = new DecimalFormat("#.##");
-        return Double.parseDouble(df.format(num));
+        return Double.parseDouble(df.format(num).replace(',', '.'));
     }
-
-    public static double porcentaje(double numero1, double porcentaje){
-        return (numero1*porcentaje)/100;
-    }
-
 
     //Areas - Perimetros - Volumen
-    public static boolean isMayorCero(double num1){
+    public static boolean isMayorCero(double num1) {
         return (num1 > 0);
     }
 
-    public static double perimetroCuadradoRectangulo(double ladoa, double ladob){
-        return 2*ladoa+2*ladob;
+    public static double perimetroCuadradoRectangulo(double ladoa, double ladob) {
+        return redondear(2 * ladoa + 2 * ladob);
     }
 
-    public static double areaCuadradoRectangulo(double ladoa, double ladob){
-        return ladoa*ladob;
+    public static double areaCuadradoRectangulo(double ladoa, double ladob) {
+        return redondear(ladoa * ladob);
     }
 
-    public static double areaEsfera(double radio){
-        return Math.PI*4*Math.pow(radio,2);
+    public static double areaEsfera(double radio) {
+        return redondear(Math.PI * 4 * Math.pow(radio, 2));
     }
 
-    public static double areaCubo(double lado){
-        return redondear(6*areaCuadradoRectangulo(lado, lado));
+    public static double areaCubo(double lado) {
+        return redondear(6 * areaCuadradoRectangulo(lado, lado));
     }
 
-    public static double volumenCubo(double lado){
-        return Math.pow(lado, 3);
+    public static double volumenCubo(double lado) {
+        return redondear(Math.pow(lado, 3));
     }
 
-    public static double areaCono(double Altura, double Radio){
+    public static double areaCono(double Altura, double Radio) {
         double Hipoten = Math.sqrt(Math.pow(Altura, 2) + Math.pow(Radio, 2));
-        return Math.PI*Math.pow(Radio, 2)+ Math.PI*Radio*Hipoten;
+        return redondear(Math.PI * Math.pow(Radio, 2) + Math.PI * Radio * Hipoten);
     }
 
 
     // Rectas
+    public static String interseccionRectas(double A, double B, double C, double D, double E, double F) {
+        double factor = D / A;
 
+        double Y = (F - factor * C) / (E - factor * B);
+        double X = (C - B * Y) / A;
+        return ("X = " + X + ", Y = " + Y);
+
+    }
 }
