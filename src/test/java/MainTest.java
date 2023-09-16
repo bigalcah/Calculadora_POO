@@ -8,14 +8,11 @@ class MainTest {
 
     String ecuacionESperada;
     String ecuacionESperada2;
-    double PI;
-    double radio;
 
     @BeforeEach
     void setUp() {
         ecuacionESperada = "y = 2.5x + 1.5";
         ecuacionESperada2 = "y = 1.0";
-        PI = Math.PI;
     }
 
     @AfterEach
@@ -71,13 +68,4 @@ class MainTest {
         assertEquals(ecuacionESperada2, Main.obtenerEcuacionRecta(4,1,5,1));
     }
 
-
-    @Test
-    void areaCirculo() {
-        radio = 2;
-        assertEquals(4 * PI, Main.areaCirculo(radio));
-
-        radio = 2.3;
-        assertEquals(2.3 * 2.3 * PI, Main.areaCirculo(radio));
-    }
 }

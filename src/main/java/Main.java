@@ -1,15 +1,10 @@
-import java.security.PublicKey;
-import java.sql.SQLSyntaxErrorException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
 
     public static Scanner leer = new Scanner(System.in);
 
-    public static void main(String [] args ){
-        calculoAreaCirculo();
-    }
+    public static void main(String [] args ){}
 
     //Validaciones:
     public static boolean sonDistintos (double num1, double num2) {
@@ -62,33 +57,6 @@ public class Main {
 
     public static double obtenerPendiente(double x1, double y1, double x2, double y2){
         return (y2-y1)/(x2 - x1);
-    }
-
-
-    //Metodos para realizar los calculos de las areas y volumenes
-
-    public static void mostrarResultado(double resultado) {
-        System.out.println("Resultado = " + resultado);
-    }
-    public static void calculoAreaCirculo() {
-
-        double radio = 0;
-
-        do {
-
-            try{
-                System.out.print("Ingresa el radio del círculo: ");
-                String input = leer.next();
-                radio = Double.parseDouble(input);
-            }
-            catch (NumberFormatException e) {
-                System.out.println("Error: Debes ingresar un número válido.");
-            }
-
-        } while (!isMayorCero(radio));
-
-        mostrarResultado(areaCirculo(radio));
-
     }
 
 
