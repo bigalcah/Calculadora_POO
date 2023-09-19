@@ -180,7 +180,7 @@ public class Main {
 
     }
 
-    public static void menu_FigsGeom(){
+    public static void menu_FigsGeom(){ //uno de los menus
 
         int continuar = 0;
 
