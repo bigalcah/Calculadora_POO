@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//Listo
 public class Main {
 
     public static Scanner leer = new Scanner(System.in);
@@ -212,7 +212,7 @@ public class Main {
     public static void mostrarMenuFigsGeom(){
         System.out.println("\nMenu Figuras Geometricas ");
         System.out.println("[0] Volver\n[1] Perimetro Circulo\n[2] Area Circulo\n[3] Volumen ESfera\n[4] Volumen Cono");
-        System.out.println("Ingrese su opcion: ");
+        System.out.print("Ingrese su opcion: ");
     }
 
 }
