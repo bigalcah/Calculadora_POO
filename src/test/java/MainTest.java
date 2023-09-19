@@ -11,6 +11,8 @@ class MainTest {
     double PI;
     double radio;
 
+    double altura;
+
     @BeforeEach
     void setUp() {
         ecuacionESperada = "y = 2.5x + 1.5";
@@ -37,10 +39,10 @@ class MainTest {
     }
 
     @Test
-    void sonDistintos() {
-        assertTrue(Main.sonDistintos(-1.6,1.6));
-        assertFalse(Main.sonDistintos(0,0));
-        assertTrue(Main.sonDistintos(0.000003, -0.000003));
+    void sonIguales() {
+        assertFalse(Main.sonIguales(-1.6,1.6));
+        assertTrue(Main.sonIguales(0,0));
+        assertFalse(Main.sonIguales(0.000003, -0.000003));
     }
 
     @Test
@@ -79,5 +81,36 @@ class MainTest {
 
         radio = 2.3;
         assertEquals(2.3 * 2.3 * PI, Main.areaCirculo(radio));
+    }
+
+
+    @Test
+    void perimetroCirculo() {
+        radio = 2;
+        assertEquals(2 * PI * 2, Main.perimetroCirculo(radio));
+
+        radio = 5;
+        assertEquals(2 * PI * 5, Main.perimetroCirculo(radio));
+    }
+
+    @Test
+    void volumenEsfera() {
+        radio = 4;
+        assertEquals ( (double) 4/3 * Math.PI * Main.potencia(4, 3), Main.volumenEsfera(radio));
+
+        radio = 0.1;
+        assertEquals ( (double) 4/3 * Math.PI * Main.potencia(0.1, 3), Main.volumenEsfera(radio));
+    }
+
+    @Test
+    void volumenCono() {
+        radio = 1.9;
+        altura = 3;
+        assertEquals((double) 1/3 * Math.PI * 3 * Main.potencia(1.9,2), Main.volumenCono(radio,altura));
+
+        radio = 10.99;
+        altura = 4.1;
+        assertEquals((double) 1/3 * Math.PI * 4.1 * Main.potencia(10.99,2), Main.volumenCono(radio,altura));
+
     }
 }
