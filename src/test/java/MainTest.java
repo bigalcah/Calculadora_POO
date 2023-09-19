@@ -56,6 +56,7 @@ class CalculadoraTest {
     @Test
     void interseccio(){
         assertEquals("X = 3.0, Y = 5.0", Main.interseccionRectas(3,2,19,1,1,8));
-        assertEquals("X = Infinity, Y = -Infinity", Main.interseccionRectas(1,1,19,1,1,8));
+        assertEquals("No hay solucion unica", Main.interseccionRectas(1,1,19,1,1,8));
+        assertEquals("No hay solucion unica", Main.interseccionRectas(0,0,19,0,0,8));
     }
 }

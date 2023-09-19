@@ -71,11 +71,14 @@ public class Main {
 
     // Rectas
     public static String interseccionRectas(double A, double B, double C, double D, double E, double F) {
+        if (A*E - B*D == 0){
+            return "No hay solucion unica";
+        }
+
         double factor = D / A;
 
         double Y = (F - factor * C) / (E - factor * B);
         double X = (C - B * Y) / A;
         return ("X = " + X + ", Y = " + Y);
-
     }
 }
