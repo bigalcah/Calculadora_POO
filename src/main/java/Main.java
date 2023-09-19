@@ -54,7 +54,18 @@ public class Main {
             System.out.println("Unica solucion: x1 = " + x1);
         }
     }
-    public static void sistema2x2(double a, double b, double c, double d, double e, double f){
-
+    public static double[] sistema2x2(double a, double b, double c, double d, double e, double f) {
+        double determinante = (a * e) - (b * d);
+        double x = 0;
+        double y = 0;
+        try {
+            if (determinante != 0) {
+                x = ((c * e) - (b * f)) / (determinante);
+                y = ((a * f) - (d * c)) / (determinante);
+            }
+        }catch (ArithmeticException ae){
+            throw new ArithmeticException("error: "+ ae.getMessage());
+        }return new double[]{x, y};
     }
+
 }
