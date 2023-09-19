@@ -1,6 +1,3 @@
-import java.security.PublicKey;
-import java.sql.SQLSyntaxErrorException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
