@@ -109,8 +109,8 @@ class MainTest {
         assertEquals((double) 1/3 * Math.PI * 3 * Main.potencia(1.9,2), Main.volumenCono(radio,altura));
 
         radio = 10.99;
-        altura = 4.1;
-        assertEquals((double) 1/3 * Math.PI * 4.1 * Main.potencia(10.99,2), Main.volumenCono(radio,altura));
+        altura = 4.2;
+        assertEquals((double) 1/3 * Math.PI * 4.2 * Main.potencia(10.99,2), Main.volumenCono(radio,altura));
 
     }
 }
