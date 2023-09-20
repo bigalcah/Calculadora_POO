@@ -20,6 +20,9 @@ public class Main {
     public static boolean isDistintoCero(double num1) {
         return num1 != 0; }
 
+    public static boolean isDistintoCero2(double num1) {
+        return num1 == 0; }
+
 
     //Formulas Basicas:
 
@@ -195,11 +198,13 @@ public class Main {
     }
     public static void calculoCuadratica(double a, double b, double c){
 
-        if (isDistintoCero(a)){
+        if (isDistintoCero2(a)){
             throw new ArithmeticException("No es una cuadratica, ya que a es igual a 0");
         }
         double discriminante = calcularDiscriminante(a,b,c);
+
         double x1, x2;
+
         if (discriminante > 0){
             x1 = (-b + discriminante) / (a*2);
             x2 = (-b - discriminante) / (a*2);
