@@ -186,6 +186,31 @@ public class Main {
         return punto;
     } //para la recta
 
+    public static double calcularDiscriminante(double a, double b, double c){
+        if (4*a*c > b*b){
+            throw new ArithmeticException("No tiene solucino real");
+        }else{
+            return Math.sqrt(b*b - 4*a*c);
+        }
+    }
+    public static void calculoCuadratica(double a, double b, double c){
+
+        if (isDistintoCero(a)){
+            throw new ArithmeticException("No es una cuadratica, ya que a es igual a 0");
+        }
+        double discriminante = calcularDiscriminante(a,b,c);
+        double x1, x2;
+        if (discriminante > 0){
+            x1 = (-b + discriminante) / (a*2);
+            x2 = (-b - discriminante) / (a*2);
+            System.out.println("Solucion x1 = " + x1 + " Solucion x2 = " + x2);
+        }
+        else if(discriminante == 0){
+            x1 = (-b + discriminante) / (a*2);
+            System.out.println("Unica solucion: x1 = " + x1);
+        }
+    }
+
     public static void B_Suma(){
         System.out.println("\nPrimer valor: ");
         double num1 = validarMedida();
