@@ -3,22 +3,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class MainTest {
 
     String ecuacionESperada;
     String ecuacionESperada2;
     double PI;
     double radio;
-
     double altura;
+    double[] matrizEsperada1 = new double[2];
+    double[] matrizEsperada2 = new double[2];
 
     @BeforeEach
     void setUp() {
         ecuacionESperada = "y = 2.5x + 1.5";
         ecuacionESperada2 = "y = 1.0";
         PI = Math.PI;
+        matrizEsperada1[0] = 5;
+        matrizEsperada1[1] = 2;
+        matrizEsperada2[0] = (double) 5 / 4;
+        matrizEsperada2[1] = (double) - 1 / 4;
     }
 
     @AfterEach
@@ -162,18 +165,6 @@ class MainTest {
         assertEquals("X = 3.0, Y = 5.0", Main.interseccionRectas(3,2,19,1,1,8));
         assertEquals("No hay solucion unica", Main.interseccionRectas(1,1,19,1,1,8));
         assertEquals("No hay solucion unica", Main.interseccionRectas(0,0,19,0,0,8));
-    double[] matrizEsperada1 = new double[2];
-    double[] matrizEsperada2 = new double[2];
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
-        matrizEsperada1[0] = 5;
-        matrizEsperada1[1] = 2;
-        matrizEsperada2[0] = (double) 5 / 4;
-        matrizEsperada2[1] = (double) - 1 / 4;
-    }
-
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
     }
 
     @org.junit.jupiter.api.Test
