@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-public class Main {
-=======
 import java.util.Scanner;
 
 public class Main {
@@ -218,5 +215,4 @@ public class Main {
         System.out.println("Ingrese su opcion: ");
     }
 
->>>>>>> Joaquin_Faundez_Avance2
 }
